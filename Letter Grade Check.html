@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+<title>Grade Check</title>
+<meta charset="utf-8">
+</head>
+<body>
+<style>
+
+</style>
+<canvas id="Screen" width=720 length=400 style="border : 5px solid black;"></canvas>
+<script>
+// This code will assign a letter grade depending on what numeric grade is given.
+const gradeCheck = function(numGrade){
+		if (numGrade >= 90 && numGrade < 100){
+			var grade = ("Letter Grade: A");
+			return grade
+		}
+		else if(numGrade >= 80 && numGrade < 90){
+			var grade = "Letter Grade: B";
+			return grade
+		}
+		else if(numGrade >= 70 && numGrade < 80){
+			var grade = "Letter Grade: C";
+			return grade
+		}
+		else if(numGrade >= 65 && numGrade < 70){
+			var grade = "Letter Grade: D";
+			return grade
+		}
+		else if(numGrade < 65 && numGrade > 0){
+			var grade = "Letter Grade: F";
+			return grade
+		}
+		else {
+			var grade = "Number Threshold Surpassed, Enter Grade Again.";
+			return grade
+		}
+}
+var x = prompt("Enter Number Grade To Receive Letter Grade:");
+gradeCheck(x);
+var grade = gradeCheck(x);
+var canvas = document.getElementById("Screen");
+var ctx = canvas.getContext("2d");
+ctx.font = "34px Arial";
+ctx.fillText(grade,200,75);
+
+</script>
+<p>Your grade will be displayed inside of the canvas element
+</body>
+</html>
